@@ -26,11 +26,9 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-Click **API key** in the top bar, paste your free Gemini API key, and start drafting.
-
 ## Notes on the API key approach
 
-This is a client-only demo project, so the API key lives in the browser rather than behind a server. That's fine for a personal tool you run yourself, but it's **not** how you'd ship this for real users — in production, the API call should go through a backend that holds the key, so it's never exposed client-side. Documenting that tradeoff here on purpose.
+This is a client-only demo project, so the API key lives in the browser rather than behind a server.
 
 ## What I'd add next
 
