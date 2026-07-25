@@ -11,7 +11,7 @@ As Content Head for my university's Microsoft Student Chapter, a big part of my 
 ## How it works
 
 - Vanilla HTML, CSS, and JavaScript — no framework, no build step.
-- Calls the [Google Gemini API](https://ai.google.dev) directly from the browser to generate captions (free tier, no billing required).
+- Calls the [Google Gemini API](https://ai.google.dev) directly from the browser to generate captions.
 - You bring your own API key (get a free one at [aistudio.google.com/apikey](https://aistudio.google.com/apikey)). It's stored in `sessionStorage` only — never sent anywhere but `generativelanguage.googleapis.com`, and cleared as soon as you close the tab.
 - The model is prompted to return structured JSON (caption + hashtags), which is parsed and rendered as draft cards.
 
