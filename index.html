@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DraftBox — AI Caption Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">DB</span>
+      <span class="brand-name">DraftBox</span>
+    </div>
+    <button id="keyBtn" class="key-btn" aria-haspopup="dialog">
+      <span class="dot" id="keyDot"></span> API key
+    </button>
+  </header>
+
+  <main class="layout">
+
+    <!-- LEFT: compose panel -->
+    <section class="compose" aria-label="Compose a caption brief">
+      <p class="eyebrow">Brief</p>
+      <h1>Write the post.<br>Skip the blank page.</h1>
+      <p class="sub">Give DraftBox a topic and a platform. It drafts three captions with on-brand hashtags — you pick, tweak, and post.</p>
+
+      <form id="briefForm">
+        <label class="field">
+          <span>Topic</span>
+          <input type="text" id="topic" placeholder="e.g. our chapter's new hackathon win" required />
+        </label>
+
+        <label class="field">
+          <span>Platform</span>
+          <select id="platform">
+            <option value="Instagram">Instagram</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="X (Twitter)">X (Twitter)</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Tone</span>
+          <select id="tone">
+            <option value="Casual & energetic">Casual &amp; energetic</option>
+            <option value="Professional">Professional</option>
+            <option value="Witty">Witty</option>
+            <option value="Inspirational">Inspirational</option>
+          </select>
+        </label>
+
+        <button type="submit" id="generateBtn" class="generate-btn">
+          <span>Generate drafts</span>
+        </button>
+      </form>
+
+      <p class="hint" id="statusLine">Add your free Gemini API key to start drafting.</p>
+    </section>
+
+    <!-- RIGHT: drafts board -->
+    <section class="board" aria-label="Generated drafts">
+      <div class="board-header">
+        <p class="eyebrow">Drafts</p>
+        <span id="draftCount" class="draft-count">0</span>
+      </div>
+
+      <div id="cards" class="cards">
+        <div class="empty-state" id="emptyState">
+          <p>Your drafts will pin up here.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- API key modal -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h2 id="modalTitle">Connect your API key</h2>
+      <p class="modal-copy">
+        DraftBox calls the Google Gemini API directly from your browser, so nothing is sent to a server I run.
+        Your key stays in this tab's memory only — it clears when you close it. Get a <strong>free</strong> key
+        (no credit card needed) at
+        <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>.
+      </p>
+      <input type="password" id="apiKeyInput" placeholder="AIza..." autocomplete="off" />
+      <div class="modal-actions">
+        <button id="saveKeyBtn" class="generate-btn">Save key</button>
+        <button id="closeModalBtn" class="text-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
