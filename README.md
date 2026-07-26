@@ -2,8 +2,6 @@
 
 A small web app that turns a topic into three ready-to-post social captions, complete with hashtags — built to speed up the part of content work that's usually the slowest: staring at a blank caption box.
 
-**[Live demo](#)** · Built by Hrishika Thakur
-
 ## Why I built this
 
 As Content Head for my university's Microsoft Student Chapter, a big part of my role is writing consistent, on-tone copy across platforms — fast. DraftBox is a tool I wished existed: give it a topic, a platform, and a tone, and it drafts three usable captions with hashtags in seconds, styled like pinned index cards you can pick from and copy.
